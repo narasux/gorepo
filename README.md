@@ -9,3 +9,4 @@ GoRepo provides a set of concise and useful golang projects, suitable for specia
 ## Repo List
 
 - [webserver](./webserver)
+- [hello](./hello)
