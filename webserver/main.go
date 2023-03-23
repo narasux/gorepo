@@ -20,6 +20,6 @@ func main() {
 	fs := http.FileServer(http.Dir(assetsDir))
 	http.Handle(path, http.StripPrefix(path, fs))
 
-	fmt.Println("start listen and serve...")
+	fmt.Println("Starting server on port 8080...")
 	_ = http.ListenAndServe(":8080", nil)
 }

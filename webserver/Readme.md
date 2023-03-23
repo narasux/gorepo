@@ -2,7 +2,7 @@
 
 A simple web server that supports accessing files in a specified directory through a browser.
 
-## How to use (Docker)
+## How to use
 
 ```shell
 # build gowebserver docker image

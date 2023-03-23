@@ -2,7 +2,7 @@
 
 Simple HTTP Server, you can access `ip:8080` for hello information.
 
-## How to use (Docker)
+## How to use
 
 ```shell
 # build gohello docker image
