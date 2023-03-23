@@ -21,24 +21,27 @@ func main() {
 // IncrCPULoad ...
 func IncrCPULoad(w http.ResponseWriter, req *http.Request) {
 	hostname, _ := os.Hostname()
+	startAt := time.Now().Unix()
+
 	size, err := strconv.Atoi(req.URL.Query().Get("size"))
 	if err != nil {
 		size = payload.DefaultCPURunTimes
 	}
-	_, _ = fmt.Fprintf(w, "Run fib(30) %d times in %s at %s", size, hostname, time.Now().Format(time.RFC1123Z))
-
 	payload.New(payload.TypeCPU).Incr(size)
 
+	_, _ = fmt.Fprintf(w, "Run fib(30) %d times in %s, cost time %ds", size, hostname, time.Now().Unix()-startAt)
 }
 
 // IncrMemoryLoad ...
 func IncrMemoryLoad(w http.ResponseWriter, req *http.Request) {
 	hostname, _ := os.Hostname()
+	startAt := time.Now().Unix()
+
 	size, err := strconv.Atoi(req.URL.Query().Get("size"))
 	if err != nil {
 		size = payload.DefaultMemAllocateSize
 	}
-	_, _ = fmt.Fprintf(w, "Allocate %d MB memory in %s at %s", size, hostname, time.Now().Format(time.RFC1123Z))
-
 	payload.New(payload.TypeMem).Incr(size)
+
+	_, _ = fmt.Fprintf(w, "Allocate %d MB memory in %s, cost time %ds", size, hostname, time.Now().Unix()-startAt)
 }

@@ -28,7 +28,7 @@ func (C *CPUBurner) Incr(size int) {
 		go func() {
 			defer wg.Done()
 			for j := 0; j < size; j++ {
-				fmt.Println(fib(30))
+				fib(30)
 			}
 		}()
 	}

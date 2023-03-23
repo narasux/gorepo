@@ -16,6 +16,6 @@ docker run -p 8080:8080 --name goloadgen -d goloadgen:1.0.0
 curl http://127.0.0.1:8080/api/cpu?size=500
 
 # curl http://127.0.0.1:8080/api/mem to improve memory usage
-# Parameter `size` indicates how much memory will be requested, in MB
+# Parameter `size` indicates how much memory will be allocated, in MB
 curl http://127.0.0.1:8080/api/mem?size=1024
 ```
